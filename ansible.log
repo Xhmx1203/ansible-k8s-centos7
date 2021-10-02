@@ -2756,3 +2756,547 @@ add 'warn: false' to this command task or set 'command_warnings=False' in ansibl
 2021-10-02 09:21:03,637 p=10342 u=root n=ansible | master01                   : ok=36   changed=9    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2021-10-02 09:21:03,637 p=10342 u=root n=ansible | node01                     : ok=36   changed=6    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2021-10-02 09:21:03,637 p=10342 u=root n=ansible | node02                     : ok=36   changed=6    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-02 10:49:26,863 p=11864 u=root n=ansible | PLAY [all] ***************************************************************************************************************************
+2021-10-02 10:49:26,882 p=11864 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2021-10-02 10:49:28,766 p=11864 u=root n=ansible | ok: [master01]
+2021-10-02 10:49:28,821 p=11864 u=root n=ansible | ok: [node01]
+2021-10-02 10:49:28,836 p=11864 u=root n=ansible | ok: [node02]
+2021-10-02 10:49:28,853 p=11864 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:49:28,961 p=11864 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/00.disable-firewalld.yml for node01, node02, master01
+2021-10-02 10:49:28,989 p=11864 u=root n=ansible | TASK [common : disable firewalld] ****************************************************************************************************
+2021-10-02 10:49:30,899 p=11864 u=root n=ansible | changed: [master01]
+2021-10-02 10:49:30,969 p=11864 u=root n=ansible | changed: [node02]
+2021-10-02 10:49:31,039 p=11864 u=root n=ansible | changed: [node01]
+2021-10-02 10:49:31,056 p=11864 u=root n=ansible | TASK [common : time zone settings] ***************************************************************************************************
+2021-10-02 10:49:31,765 p=11864 u=root n=ansible | changed: [node02]
+2021-10-02 10:49:31,784 p=11864 u=root n=ansible | changed: [node01]
+2021-10-02 10:49:32,747 p=11864 u=root n=ansible | changed: [master01]
+2021-10-02 10:49:32,765 p=11864 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:49:32,881 p=11864 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/01.install-packages.yml for node01, node02, master01
+2021-10-02 10:49:32,914 p=11864 u=root n=ansible | TASK [common : Install a list of packages] *******************************************************************************************
+2021-10-02 10:49:55,460 p=11864 u=root n=ansible | changed: [master01]
+2021-10-02 10:49:58,323 p=11864 u=root n=ansible | changed: [node02]
+2021-10-02 10:49:59,426 p=11864 u=root n=ansible | changed: [node01]
+2021-10-02 10:49:59,445 p=11864 u=root n=ansible | TASK [common : copy docker and k8s repo] *********************************************************************************************
+2021-10-02 10:50:00,692 p=11864 u=root n=ansible | changed: [master01]
+2021-10-02 10:50:00,712 p=11864 u=root n=ansible | changed: [node01]
+2021-10-02 10:50:00,713 p=11864 u=root n=ansible | changed: [node02]
+2021-10-02 10:50:00,731 p=11864 u=root n=ansible | TASK [common : copy docker repo] *****************************************************************************************************
+2021-10-02 10:50:01,619 p=11864 u=root n=ansible | changed: [master01]
+2021-10-02 10:50:01,623 p=11864 u=root n=ansible | changed: [node01]
+2021-10-02 10:50:01,639 p=11864 u=root n=ansible | changed: [node02]
+2021-10-02 10:50:01,664 p=11864 u=root n=ansible | TASK [common : yum update cache] *****************************************************************************************************
+2021-10-02 10:50:02,749 p=11864 u=root n=ansible | [WARNING]: Consider using the yum module rather than running 'yum'.  If you need to use command because yum is insufficient you can
+add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2021-10-02 10:50:02,750 p=11864 u=root n=ansible | changed: [master01]
+2021-10-02 10:50:02,830 p=11864 u=root n=ansible | changed: [node02]
+2021-10-02 10:50:02,991 p=11864 u=root n=ansible | changed: [node01]
+2021-10-02 10:50:03,009 p=11864 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:50:03,122 p=11864 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/02.copy-hosts-file.yml for node01, node02, master01
+2021-10-02 10:50:03,166 p=11864 u=root n=ansible | TASK [common : copy hosts file to every nodes] ***************************************************************************************
+2021-10-02 10:50:04,147 p=11864 u=root n=ansible | ok: [master01]
+2021-10-02 10:50:04,165 p=11864 u=root n=ansible | ok: [node02]
+2021-10-02 10:50:04,167 p=11864 u=root n=ansible | ok: [node01]
+2021-10-02 10:50:04,185 p=11864 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:50:04,298 p=11864 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/03.copy-chrony-conf.yml for node01, node02, master01
+2021-10-02 10:50:04,345 p=11864 u=root n=ansible | TASK [common : copy chrony file to echo host] ****************************************************************************************
+2021-10-02 10:50:05,212 p=11864 u=root n=ansible | changed: [node01]
+2021-10-02 10:50:05,231 p=11864 u=root n=ansible | changed: [master01]
+2021-10-02 10:50:05,241 p=11864 u=root n=ansible | changed: [node02]
+2021-10-02 10:50:05,259 p=11864 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:50:05,371 p=11864 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/04.flush-iptables.yml for node01, node02, master01
+2021-10-02 10:50:05,421 p=11864 u=root n=ansible | TASK [common : flush iptables] *******************************************************************************************************
+2021-10-02 10:50:06,084 p=11864 u=root n=ansible | changed: [master01]
+2021-10-02 10:50:06,106 p=11864 u=root n=ansible | changed: [node01]
+2021-10-02 10:50:06,109 p=11864 u=root n=ansible | changed: [node02]
+2021-10-02 10:50:06,126 p=11864 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:50:06,239 p=11864 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/05.swapoff.yml for node01, node02, master01
+2021-10-02 10:50:06,294 p=11864 u=root n=ansible | TASK [common : swap off] *************************************************************************************************************
+2021-10-02 10:50:06,761 p=11864 u=root n=ansible | changed: [node01]
+2021-10-02 10:50:06,789 p=11864 u=root n=ansible | changed: [node02]
+2021-10-02 10:50:06,799 p=11864 u=root n=ansible | changed: [master01]
+2021-10-02 10:50:06,817 p=11864 u=root n=ansible | TASK [common : write to fstable swap off] ********************************************************************************************
+2021-10-02 10:50:07,399 p=11864 u=root n=ansible | changed: [master01]
+2021-10-02 10:50:07,418 p=11864 u=root n=ansible | changed: [node01]
+2021-10-02 10:50:07,419 p=11864 u=root n=ansible | changed: [node02]
+2021-10-02 10:50:07,436 p=11864 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:50:07,552 p=11864 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/06.selinux-disabled.yml for node01, node02, master01
+2021-10-02 10:50:07,612 p=11864 u=root n=ansible | TASK [common : disabling selinux] ****************************************************************************************************
+2021-10-02 10:50:08,535 p=11864 u=root n=ansible | [WARNING]: SELinux state temporarily changed from 'enforcing' to 'permissive'. State change will take effect next reboot.
+
+2021-10-02 10:50:08,536 p=11864 u=root n=ansible | changed: [master01]
+2021-10-02 10:50:08,545 p=11864 u=root n=ansible | changed: [node01]
+2021-10-02 10:50:08,546 p=11864 u=root n=ansible | changed: [node02]
+2021-10-02 10:50:08,565 p=11864 u=root n=ansible | TASK [common : write selinux disabled to file] ***************************************************************************************
+2021-10-02 10:50:09,231 p=11864 u=root n=ansible | ok: [master01]
+2021-10-02 10:50:09,240 p=11864 u=root n=ansible | ok: [node02]
+2021-10-02 10:50:09,247 p=11864 u=root n=ansible | ok: [node01]
+2021-10-02 10:50:09,265 p=11864 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:50:09,384 p=11864 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/07.advanced-kernal-settings.yml for node01, node02, master01
+2021-10-02 10:50:09,451 p=11864 u=root n=ansible | TASK [common : Add the br_netfilter module] ******************************************************************************************
+2021-10-02 10:50:10,100 p=11864 u=root n=ansible | changed: [master01]
+2021-10-02 10:50:10,117 p=11864 u=root n=ansible | changed: [node01]
+2021-10-02 10:50:10,118 p=11864 u=root n=ansible | changed: [node02]
+2021-10-02 10:50:10,135 p=11864 u=root n=ansible | TASK [common : copy kernal settings file to local] ***********************************************************************************
+2021-10-02 10:50:10,977 p=11864 u=root n=ansible | changed: [node01]
+2021-10-02 10:50:10,995 p=11864 u=root n=ansible | changed: [master01]
+2021-10-02 10:50:11,013 p=11864 u=root n=ansible | changed: [node02]
+2021-10-02 10:50:11,031 p=11864 u=root n=ansible | TASK [common : sysctl settings] ******************************************************************************************************
+2021-10-02 10:50:11,492 p=11864 u=root n=ansible | fatal: [node01]: FAILED! => {"changed": true, "cmd": "sysctl -p /etc/sysctl.d/k8s.conf", "delta": "0:00:00.018360", "end": "2021-10-02 22:50:11.446577", "msg": "non-zero return code", "rc": 255, "start": "2021-10-02 22:50:11.428217", "stderr": "sysctl: cannot stat /proc/sys/net/netfilter/nf_conntrack_max: No such file or directory", "stderr_lines": ["sysctl: cannot stat /proc/sys/net/netfilter/nf_conntrack_max: No such file or directory"], "stdout": "net.bridge.bridge-nf-call-iptables = 1\nnet.bridge.bridge-nf-call-ip6tables = 1\nnet.ipv4.ip_forward = 1\nnet.ipv4.tcp_tw_recycle = 0\nvm.swappiness = 0\nvm.overcommit_memory = 1\nvm.panic_on_oom = 0\nfs.inotify.max_user_instances = 8192\nfs.inotify.max_user_watches = 1048576\nfs.file-max = 52706963\nfs.nr_open = 52706963\nnet.ipv6.conf.all.disable_ipv6 = 1", "stdout_lines": ["net.bridge.bridge-nf-call-iptables = 1", "net.bridge.bridge-nf-call-ip6tables = 1", "net.ipv4.ip_forward = 1", "net.ipv4.tcp_tw_recycle = 0", "vm.swappiness = 0", "vm.overcommit_memory = 1", "vm.panic_on_oom = 0", "fs.inotify.max_user_instances = 8192", "fs.inotify.max_user_watches = 1048576", "fs.file-max = 52706963", "fs.nr_open = 52706963", "net.ipv6.conf.all.disable_ipv6 = 1"]}
+2021-10-02 10:50:11,521 p=11864 u=root n=ansible | fatal: [node02]: FAILED! => {"changed": true, "cmd": "sysctl -p /etc/sysctl.d/k8s.conf", "delta": "0:00:00.020793", "end": "2021-10-02 22:50:11.457779", "msg": "non-zero return code", "rc": 255, "start": "2021-10-02 22:50:11.436986", "stderr": "sysctl: cannot stat /proc/sys/net/netfilter/nf_conntrack_max: No such file or directory", "stderr_lines": ["sysctl: cannot stat /proc/sys/net/netfilter/nf_conntrack_max: No such file or directory"], "stdout": "net.bridge.bridge-nf-call-iptables = 1\nnet.bridge.bridge-nf-call-ip6tables = 1\nnet.ipv4.ip_forward = 1\nnet.ipv4.tcp_tw_recycle = 0\nvm.swappiness = 0\nvm.overcommit_memory = 1\nvm.panic_on_oom = 0\nfs.inotify.max_user_instances = 8192\nfs.inotify.max_user_watches = 1048576\nfs.file-max = 52706963\nfs.nr_open = 52706963\nnet.ipv6.conf.all.disable_ipv6 = 1", "stdout_lines": ["net.bridge.bridge-nf-call-iptables = 1", "net.bridge.bridge-nf-call-ip6tables = 1", "net.ipv4.ip_forward = 1", "net.ipv4.tcp_tw_recycle = 0", "vm.swappiness = 0", "vm.overcommit_memory = 1", "vm.panic_on_oom = 0", "fs.inotify.max_user_instances = 8192", "fs.inotify.max_user_watches = 1048576", "fs.file-max = 52706963", "fs.nr_open = 52706963", "net.ipv6.conf.all.disable_ipv6 = 1"]}
+2021-10-02 10:50:11,532 p=11864 u=root n=ansible | fatal: [master01]: FAILED! => {"changed": true, "cmd": "sysctl -p /etc/sysctl.d/k8s.conf", "delta": "0:00:00.019835", "end": "2021-10-02 22:50:11.390163", "msg": "non-zero return code", "rc": 255, "start": "2021-10-02 22:50:11.370328", "stderr": "sysctl: cannot stat /proc/sys/net/netfilter/nf_conntrack_max: No such file or directory", "stderr_lines": ["sysctl: cannot stat /proc/sys/net/netfilter/nf_conntrack_max: No such file or directory"], "stdout": "net.bridge.bridge-nf-call-iptables = 1\nnet.bridge.bridge-nf-call-ip6tables = 1\nnet.ipv4.ip_forward = 1\nnet.ipv4.tcp_tw_recycle = 0\nvm.swappiness = 0\nvm.overcommit_memory = 1\nvm.panic_on_oom = 0\nfs.inotify.max_user_instances = 8192\nfs.inotify.max_user_watches = 1048576\nfs.file-max = 52706963\nfs.nr_open = 52706963\nnet.ipv6.conf.all.disable_ipv6 = 1", "stdout_lines": ["net.bridge.bridge-nf-call-iptables = 1", "net.bridge.bridge-nf-call-ip6tables = 1", "net.ipv4.ip_forward = 1", "net.ipv4.tcp_tw_recycle = 0", "vm.swappiness = 0", "vm.overcommit_memory = 1", "vm.panic_on_oom = 0", "fs.inotify.max_user_instances = 8192", "fs.inotify.max_user_watches = 1048576", "fs.file-max = 52706963", "fs.nr_open = 52706963", "net.ipv6.conf.all.disable_ipv6 = 1"]}
+2021-10-02 10:50:11,533 p=11864 u=root n=ansible | RUNNING HANDLER [common : restart chronyd] *******************************************************************************************
+2021-10-02 10:50:11,534 p=11864 u=root n=ansible | RUNNING HANDLER [common : enable iptables] *******************************************************************************************
+2021-10-02 10:50:11,536 p=11864 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2021-10-02 10:50:11,536 p=11864 u=root n=ansible | master01                   : ok=24   changed=13   unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-10-02 10:50:11,536 p=11864 u=root n=ansible | node01                     : ok=24   changed=13   unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-10-02 10:50:11,537 p=11864 u=root n=ansible | node02                     : ok=24   changed=13   unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-10-02 10:51:42,319 p=12512 u=root n=ansible | PLAY [all] ***************************************************************************************************************************
+2021-10-02 10:51:42,339 p=12512 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2021-10-02 10:51:44,178 p=12512 u=root n=ansible | ok: [node01]
+2021-10-02 10:51:44,190 p=12512 u=root n=ansible | ok: [master01]
+2021-10-02 10:51:44,199 p=12512 u=root n=ansible | ok: [node02]
+2021-10-02 10:51:44,211 p=12512 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:51:44,311 p=12512 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/00.disable-firewalld.yml for node01, node02, master01
+2021-10-02 10:51:44,331 p=12512 u=root n=ansible | TASK [common : disable firewalld] ****************************************************************************************************
+2021-10-02 10:51:45,278 p=12512 u=root n=ansible | ok: [master01]
+2021-10-02 10:51:45,311 p=12512 u=root n=ansible | ok: [node02]
+2021-10-02 10:51:45,313 p=12512 u=root n=ansible | ok: [node01]
+2021-10-02 10:51:45,324 p=12512 u=root n=ansible | TASK [common : time zone settings] ***************************************************************************************************
+2021-10-02 10:51:45,983 p=12512 u=root n=ansible | ok: [master01]
+2021-10-02 10:51:45,990 p=12512 u=root n=ansible | ok: [node02]
+2021-10-02 10:51:45,991 p=12512 u=root n=ansible | ok: [node01]
+2021-10-02 10:51:46,003 p=12512 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:51:46,108 p=12512 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/01.install-packages.yml for node01, node02, master01
+2021-10-02 10:51:46,135 p=12512 u=root n=ansible | TASK [common : Install a list of packages] *******************************************************************************************
+2021-10-02 10:51:47,244 p=12512 u=root n=ansible | ok: [master01]
+2021-10-02 10:51:47,247 p=12512 u=root n=ansible | ok: [node02]
+2021-10-02 10:51:47,252 p=12512 u=root n=ansible | ok: [node01]
+2021-10-02 10:51:47,266 p=12512 u=root n=ansible | TASK [common : copy docker and k8s repo] *********************************************************************************************
+2021-10-02 10:51:48,288 p=12512 u=root n=ansible | ok: [master01]
+2021-10-02 10:51:48,292 p=12512 u=root n=ansible | ok: [node01]
+2021-10-02 10:51:48,293 p=12512 u=root n=ansible | ok: [node02]
+2021-10-02 10:51:48,305 p=12512 u=root n=ansible | TASK [common : copy docker repo] *****************************************************************************************************
+2021-10-02 10:51:49,058 p=12512 u=root n=ansible | ok: [node01]
+2021-10-02 10:51:49,084 p=12512 u=root n=ansible | ok: [node02]
+2021-10-02 10:51:49,107 p=12512 u=root n=ansible | ok: [master01]
+2021-10-02 10:51:49,119 p=12512 u=root n=ansible | TASK [common : yum update cache] *****************************************************************************************************
+2021-10-02 10:51:50,153 p=12512 u=root n=ansible | [WARNING]: Consider using the yum module rather than running 'yum'.  If you need to use command because yum is insufficient you can
+add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2021-10-02 10:51:50,153 p=12512 u=root n=ansible | changed: [node02]
+2021-10-02 10:51:50,154 p=12512 u=root n=ansible | changed: [master01]
+2021-10-02 10:51:50,240 p=12512 u=root n=ansible | changed: [node01]
+2021-10-02 10:51:50,252 p=12512 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:51:50,360 p=12512 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/02.copy-hosts-file.yml for node01, node02, master01
+2021-10-02 10:51:50,396 p=12512 u=root n=ansible | TASK [common : copy hosts file to every nodes] ***************************************************************************************
+2021-10-02 10:51:51,147 p=12512 u=root n=ansible | ok: [node01]
+2021-10-02 10:51:51,175 p=12512 u=root n=ansible | ok: [node02]
+2021-10-02 10:51:51,197 p=12512 u=root n=ansible | ok: [master01]
+2021-10-02 10:51:51,209 p=12512 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:51:51,315 p=12512 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/03.copy-chrony-conf.yml for node01, node02, master01
+2021-10-02 10:51:51,353 p=12512 u=root n=ansible | TASK [common : copy chrony file to echo host] ****************************************************************************************
+2021-10-02 10:51:52,104 p=12512 u=root n=ansible | ok: [node01]
+2021-10-02 10:51:52,138 p=12512 u=root n=ansible | ok: [node02]
+2021-10-02 10:51:52,152 p=12512 u=root n=ansible | ok: [master01]
+2021-10-02 10:51:52,164 p=12512 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:51:52,265 p=12512 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/04.flush-iptables.yml for node01, node02, master01
+2021-10-02 10:51:52,309 p=12512 u=root n=ansible | TASK [common : flush iptables] *******************************************************************************************************
+2021-10-02 10:51:52,962 p=12512 u=root n=ansible | changed: [master01]
+2021-10-02 10:51:52,963 p=12512 u=root n=ansible | changed: [node01]
+2021-10-02 10:51:52,964 p=12512 u=root n=ansible | changed: [node02]
+2021-10-02 10:51:52,975 p=12512 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:51:53,081 p=12512 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/05.swapoff.yml for node01, node02, master01
+2021-10-02 10:51:53,127 p=12512 u=root n=ansible | TASK [common : swap off] *************************************************************************************************************
+2021-10-02 10:51:53,571 p=12512 u=root n=ansible | changed: [node01]
+2021-10-02 10:51:53,597 p=12512 u=root n=ansible | changed: [node02]
+2021-10-02 10:51:53,617 p=12512 u=root n=ansible | changed: [master01]
+2021-10-02 10:51:53,629 p=12512 u=root n=ansible | TASK [common : write to fstable swap off] ********************************************************************************************
+2021-10-02 10:51:54,243 p=12512 u=root n=ansible | ok: [node01]
+2021-10-02 10:51:54,246 p=12512 u=root n=ansible | ok: [master01]
+2021-10-02 10:51:54,251 p=12512 u=root n=ansible | ok: [node02]
+2021-10-02 10:51:54,264 p=12512 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:51:54,369 p=12512 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/06.selinux-disabled.yml for node01, node02, master01
+2021-10-02 10:51:54,418 p=12512 u=root n=ansible | TASK [common : disabling selinux] ****************************************************************************************************
+2021-10-02 10:51:55,316 p=12512 u=root n=ansible | [WARNING]: SELinux state change will take effect next reboot
+
+2021-10-02 10:51:55,316 p=12512 u=root n=ansible | ok: [node02]
+2021-10-02 10:51:55,327 p=12512 u=root n=ansible | ok: [master01]
+2021-10-02 10:51:55,336 p=12512 u=root n=ansible | ok: [node01]
+2021-10-02 10:51:55,348 p=12512 u=root n=ansible | TASK [common : write selinux disabled to file] ***************************************************************************************
+2021-10-02 10:51:55,933 p=12512 u=root n=ansible | ok: [node01]
+2021-10-02 10:51:55,936 p=12512 u=root n=ansible | ok: [master01]
+2021-10-02 10:51:55,937 p=12512 u=root n=ansible | ok: [node02]
+2021-10-02 10:51:55,949 p=12512 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:51:56,061 p=12512 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/07.advanced-kernal-settings.yml for node01, node02, master01
+2021-10-02 10:51:56,118 p=12512 u=root n=ansible | TASK [common : Add the br_netfilter module] ******************************************************************************************
+2021-10-02 10:51:56,686 p=12512 u=root n=ansible | ok: [master01]
+2021-10-02 10:51:56,689 p=12512 u=root n=ansible | ok: [node01]
+2021-10-02 10:51:56,692 p=12512 u=root n=ansible | ok: [node02]
+2021-10-02 10:51:56,704 p=12512 u=root n=ansible | TASK [common : copy kernal settings file to local] ***********************************************************************************
+2021-10-02 10:51:57,153 p=12512 u=root n=ansible | ok: [node01]
+2021-10-02 10:51:57,190 p=12512 u=root n=ansible | ok: [node02]
+2021-10-02 10:51:57,213 p=12512 u=root n=ansible | ok: [master01]
+2021-10-02 10:51:57,225 p=12512 u=root n=ansible | TASK [common : sysctl settings] ******************************************************************************************************
+2021-10-02 10:51:57,671 p=12512 u=root n=ansible | changed: [node01]
+2021-10-02 10:51:57,701 p=12512 u=root n=ansible | changed: [node02]
+2021-10-02 10:51:57,727 p=12512 u=root n=ansible | changed: [master01]
+2021-10-02 10:51:57,739 p=12512 u=root n=ansible | TASK [common : load ipvs modules] ****************************************************************************************************
+2021-10-02 10:51:58,266 p=12512 u=root n=ansible | changed: [node01] => (item=ip_vs)
+2021-10-02 10:51:58,288 p=12512 u=root n=ansible | changed: [node02] => (item=ip_vs)
+2021-10-02 10:51:58,317 p=12512 u=root n=ansible | changed: [master01] => (item=ip_vs)
+2021-10-02 10:51:58,698 p=12512 u=root n=ansible | changed: [node01] => (item=ip_vs_rr)
+2021-10-02 10:51:58,722 p=12512 u=root n=ansible | changed: [node02] => (item=ip_vs_rr)
+2021-10-02 10:51:58,743 p=12512 u=root n=ansible | changed: [master01] => (item=ip_vs_rr)
+2021-10-02 10:51:59,132 p=12512 u=root n=ansible | changed: [node01] => (item=ip_vs_wrr)
+2021-10-02 10:51:59,161 p=12512 u=root n=ansible | changed: [node02] => (item=ip_vs_wrr)
+2021-10-02 10:51:59,171 p=12512 u=root n=ansible | changed: [master01] => (item=ip_vs_wrr)
+2021-10-02 10:51:59,565 p=12512 u=root n=ansible | changed: [node01] => (item=ip_vs_sh)
+2021-10-02 10:51:59,593 p=12512 u=root n=ansible | changed: [master01] => (item=ip_vs_sh)
+2021-10-02 10:51:59,603 p=12512 u=root n=ansible | changed: [node02] => (item=ip_vs_sh)
+2021-10-02 10:51:59,995 p=12512 u=root n=ansible | changed: [node01] => (item=nf_conntrack_ipv4)
+2021-10-02 10:52:00,030 p=12512 u=root n=ansible | changed: [master01] => (item=nf_conntrack_ipv4)
+2021-10-02 10:52:00,033 p=12512 u=root n=ansible | changed: [node02] => (item=nf_conntrack_ipv4)
+2021-10-02 10:52:00,047 p=12512 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:52:00,153 p=12512 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/08.journald.settings.yml for node01, node02, master01
+2021-10-02 10:52:00,216 p=12512 u=root n=ansible | TASK [common : create the folder] ****************************************************************************************************
+2021-10-02 10:52:00,677 p=12512 u=root n=ansible | changed: [node01]
+2021-10-02 10:52:00,699 p=12512 u=root n=ansible | changed: [node02]
+2021-10-02 10:52:00,722 p=12512 u=root n=ansible | changed: [master01]
+2021-10-02 10:52:00,734 p=12512 u=root n=ansible | TASK [common : copy journal files to] ************************************************************************************************
+2021-10-02 10:52:01,752 p=12512 u=root n=ansible | changed: [master01]
+2021-10-02 10:52:01,756 p=12512 u=root n=ansible | changed: [node01]
+2021-10-02 10:52:01,758 p=12512 u=root n=ansible | changed: [node02]
+2021-10-02 10:52:01,770 p=12512 u=root n=ansible | TASK [common : restart jornald] ******************************************************************************************************
+2021-10-02 10:52:02,436 p=12512 u=root n=ansible | changed: [node01]
+2021-10-02 10:52:02,457 p=12512 u=root n=ansible | changed: [node02]
+2021-10-02 10:52:02,475 p=12512 u=root n=ansible | changed: [master01]
+2021-10-02 10:52:02,487 p=12512 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:52:02,600 p=12512 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/09.install-docker.yml for node01, node02, master01
+2021-10-02 10:52:02,676 p=12512 u=root n=ansible | TASK [common : mkdir docker] *********************************************************************************************************
+2021-10-02 10:52:03,137 p=12512 u=root n=ansible | changed: [node01]
+2021-10-02 10:52:03,168 p=12512 u=root n=ansible | changed: [node02]
+2021-10-02 10:52:03,191 p=12512 u=root n=ansible | changed: [master01]
+2021-10-02 10:52:03,203 p=12512 u=root n=ansible | TASK [common : copy docker daemon.json] **********************************************************************************************
+2021-10-02 10:52:04,040 p=12512 u=root n=ansible | changed: [node01]
+2021-10-02 10:52:04,062 p=12512 u=root n=ansible | changed: [node02]
+2021-10-02 10:52:04,081 p=12512 u=root n=ansible | changed: [master01]
+2021-10-02 10:52:04,093 p=12512 u=root n=ansible | TASK [common : install docker-ce] ****************************************************************************************************
+2021-10-02 10:52:05,244 p=12512 u=root n=ansible | failed: [node01] (item=docker-ce) => {"ansible_loop_var": "item", "changed": false, "item": "docker-ce", "msg": "No package matching 'docker-ce' found available, installed or updated", "rc": 126, "results": ["No package matching 'docker-ce' found available, installed or updated"]}
+2021-10-02 10:52:05,250 p=12512 u=root n=ansible | failed: [node02] (item=docker-ce) => {"ansible_loop_var": "item", "changed": false, "item": "docker-ce", "msg": "No package matching 'docker-ce' found available, installed or updated", "rc": 126, "results": ["No package matching 'docker-ce' found available, installed or updated"]}
+2021-10-02 10:52:05,271 p=12512 u=root n=ansible | failed: [master01] (item=docker-ce) => {"ansible_loop_var": "item", "changed": false, "item": "docker-ce", "msg": "No package matching 'docker-ce' found available, installed or updated", "rc": 126, "results": ["No package matching 'docker-ce' found available, installed or updated"]}
+2021-10-02 10:52:06,028 p=12512 u=root n=ansible | failed: [node01] (item=kubelet) => {"ansible_loop_var": "item", "changed": false, "item": "kubelet", "msg": "No package matching 'kubelet' found available, installed or updated", "rc": 126, "results": ["No package matching 'kubelet' found available, installed or updated"]}
+2021-10-02 10:52:06,031 p=12512 u=root n=ansible | failed: [node02] (item=kubelet) => {"ansible_loop_var": "item", "changed": false, "item": "kubelet", "msg": "No package matching 'kubelet' found available, installed or updated", "rc": 126, "results": ["No package matching 'kubelet' found available, installed or updated"]}
+2021-10-02 10:52:06,053 p=12512 u=root n=ansible | failed: [master01] (item=kubelet) => {"ansible_loop_var": "item", "changed": false, "item": "kubelet", "msg": "No package matching 'kubelet' found available, installed or updated", "rc": 126, "results": ["No package matching 'kubelet' found available, installed or updated"]}
+2021-10-02 10:52:06,809 p=12512 u=root n=ansible | failed: [node01] (item=kubeadm) => {"ansible_loop_var": "item", "changed": false, "item": "kubeadm", "msg": "No package matching 'kubeadm' found available, installed or updated", "rc": 126, "results": ["No package matching 'kubeadm' found available, installed or updated"]}
+2021-10-02 10:52:06,821 p=12512 u=root n=ansible | failed: [node02] (item=kubeadm) => {"ansible_loop_var": "item", "changed": false, "item": "kubeadm", "msg": "No package matching 'kubeadm' found available, installed or updated", "rc": 126, "results": ["No package matching 'kubeadm' found available, installed or updated"]}
+2021-10-02 10:52:06,828 p=12512 u=root n=ansible | failed: [master01] (item=kubeadm) => {"ansible_loop_var": "item", "changed": false, "item": "kubeadm", "msg": "No package matching 'kubeadm' found available, installed or updated", "rc": 126, "results": ["No package matching 'kubeadm' found available, installed or updated"]}
+2021-10-02 10:52:07,595 p=12512 u=root n=ansible | failed: [node02] (item=kubectl) => {"ansible_loop_var": "item", "changed": false, "item": "kubectl", "msg": "No package matching 'kubectl' found available, installed or updated", "rc": 126, "results": ["No package matching 'kubectl' found available, installed or updated"]}
+2021-10-02 10:52:07,603 p=12512 u=root n=ansible | failed: [node01] (item=kubectl) => {"ansible_loop_var": "item", "changed": false, "item": "kubectl", "msg": "No package matching 'kubectl' found available, installed or updated", "rc": 126, "results": ["No package matching 'kubectl' found available, installed or updated"]}
+2021-10-02 10:52:07,616 p=12512 u=root n=ansible | failed: [master01] (item=kubectl) => {"ansible_loop_var": "item", "changed": false, "item": "kubectl", "msg": "No package matching 'kubectl' found available, installed or updated", "rc": 126, "results": ["No package matching 'kubectl' found available, installed or updated"]}
+2021-10-02 10:52:07,622 p=12512 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2021-10-02 10:52:07,622 p=12512 u=root n=ansible | master01                   : ok=33   changed=10   unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-10-02 10:52:07,623 p=12512 u=root n=ansible | node01                     : ok=33   changed=10   unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-10-02 10:52:07,623 p=12512 u=root n=ansible | node02                     : ok=33   changed=10   unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-10-02 10:55:15,741 p=13534 u=root n=ansible | PLAY [all] ***************************************************************************************************************************
+2021-10-02 10:55:15,762 p=13534 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2021-10-02 10:55:17,616 p=13534 u=root n=ansible | ok: [master01]
+2021-10-02 10:55:17,627 p=13534 u=root n=ansible | ok: [node01]
+2021-10-02 10:55:17,636 p=13534 u=root n=ansible | ok: [node02]
+2021-10-02 10:55:17,652 p=13534 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:55:17,755 p=13534 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/00.disable-firewalld.yml for node01, node02, master01
+2021-10-02 10:55:17,781 p=13534 u=root n=ansible | TASK [common : disable firewalld] ****************************************************************************************************
+2021-10-02 10:55:18,730 p=13534 u=root n=ansible | ok: [master01]
+2021-10-02 10:55:18,746 p=13534 u=root n=ansible | ok: [node01]
+2021-10-02 10:55:18,751 p=13534 u=root n=ansible | ok: [node02]
+2021-10-02 10:55:18,767 p=13534 u=root n=ansible | TASK [common : time zone settings] ***************************************************************************************************
+2021-10-02 10:55:19,431 p=13534 u=root n=ansible | ok: [master01]
+2021-10-02 10:55:19,435 p=13534 u=root n=ansible | ok: [node01]
+2021-10-02 10:55:19,436 p=13534 u=root n=ansible | ok: [node02]
+2021-10-02 10:55:19,453 p=13534 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:55:19,562 p=13534 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/01.install-packages.yml for node01, node02, master01
+2021-10-02 10:55:19,594 p=13534 u=root n=ansible | TASK [common : Install a list of packages] *******************************************************************************************
+2021-10-02 10:55:20,721 p=13534 u=root n=ansible | ok: [node01]
+2021-10-02 10:55:20,723 p=13534 u=root n=ansible | ok: [master01]
+2021-10-02 10:55:20,725 p=13534 u=root n=ansible | ok: [node02]
+2021-10-02 10:55:20,742 p=13534 u=root n=ansible | TASK [common : copy docker and k8s repo] *********************************************************************************************
+2021-10-02 10:55:21,790 p=13534 u=root n=ansible | ok: [master01]
+2021-10-02 10:55:21,794 p=13534 u=root n=ansible | ok: [node02]
+2021-10-02 10:55:21,795 p=13534 u=root n=ansible | ok: [node01]
+2021-10-02 10:55:21,812 p=13534 u=root n=ansible | TASK [common : copy docker repo] *****************************************************************************************************
+2021-10-02 10:55:22,574 p=13534 u=root n=ansible | ok: [node01]
+2021-10-02 10:55:22,601 p=13534 u=root n=ansible | ok: [node02]
+2021-10-02 10:55:22,627 p=13534 u=root n=ansible | ok: [master01]
+2021-10-02 10:55:22,644 p=13534 u=root n=ansible | TASK [common : yum update cache] *****************************************************************************************************
+2021-10-02 10:55:23,812 p=13534 u=root n=ansible | [WARNING]: Consider using the yum module rather than running 'yum'.  If you need to use command because yum is insufficient you can
+add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2021-10-02 10:55:23,812 p=13534 u=root n=ansible | changed: [node01]
+2021-10-02 10:55:23,817 p=13534 u=root n=ansible | changed: [node02]
+2021-10-02 10:55:23,824 p=13534 u=root n=ansible | changed: [master01]
+2021-10-02 10:55:23,842 p=13534 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:55:23,947 p=13534 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/02.copy-hosts-file.yml for node01, node02, master01
+2021-10-02 10:55:23,988 p=13534 u=root n=ansible | TASK [common : copy hosts file to every nodes] ***************************************************************************************
+2021-10-02 10:55:24,750 p=13534 u=root n=ansible | ok: [node01]
+2021-10-02 10:55:24,771 p=13534 u=root n=ansible | ok: [node02]
+2021-10-02 10:55:24,798 p=13534 u=root n=ansible | ok: [master01]
+2021-10-02 10:55:24,815 p=13534 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:55:24,922 p=13534 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/03.copy-chrony-conf.yml for node01, node02, master01
+2021-10-02 10:55:24,965 p=13534 u=root n=ansible | TASK [common : copy chrony file to echo host] ****************************************************************************************
+2021-10-02 10:55:25,734 p=13534 u=root n=ansible | ok: [node01]
+2021-10-02 10:55:25,762 p=13534 u=root n=ansible | ok: [node02]
+2021-10-02 10:55:25,782 p=13534 u=root n=ansible | ok: [master01]
+2021-10-02 10:55:25,799 p=13534 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:55:25,905 p=13534 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/04.flush-iptables.yml for node01, node02, master01
+2021-10-02 10:55:25,951 p=13534 u=root n=ansible | TASK [common : flush iptables] *******************************************************************************************************
+2021-10-02 10:55:26,587 p=13534 u=root n=ansible | changed: [master01]
+2021-10-02 10:55:26,590 p=13534 u=root n=ansible | changed: [node01]
+2021-10-02 10:55:26,591 p=13534 u=root n=ansible | changed: [node02]
+2021-10-02 10:55:26,608 p=13534 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:55:26,716 p=13534 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/05.swapoff.yml for node01, node02, master01
+2021-10-02 10:55:26,766 p=13534 u=root n=ansible | TASK [common : swap off] *************************************************************************************************************
+2021-10-02 10:55:27,246 p=13534 u=root n=ansible | changed: [node02]
+2021-10-02 10:55:27,256 p=13534 u=root n=ansible | changed: [master01]
+2021-10-02 10:55:28,217 p=13534 u=root n=ansible | changed: [node01]
+2021-10-02 10:55:28,234 p=13534 u=root n=ansible | TASK [common : write to fstable swap off] ********************************************************************************************
+2021-10-02 10:55:28,809 p=13534 u=root n=ansible | ok: [master01]
+2021-10-02 10:55:28,829 p=13534 u=root n=ansible | ok: [node02]
+2021-10-02 10:55:28,831 p=13534 u=root n=ansible | ok: [node01]
+2021-10-02 10:55:28,849 p=13534 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:55:28,959 p=13534 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/06.selinux-disabled.yml for node01, node02, master01
+2021-10-02 10:55:29,016 p=13534 u=root n=ansible | TASK [common : disabling selinux] ****************************************************************************************************
+2021-10-02 10:55:29,938 p=13534 u=root n=ansible | [WARNING]: SELinux state change will take effect next reboot
+
+2021-10-02 10:55:29,938 p=13534 u=root n=ansible | ok: [master01]
+2021-10-02 10:55:29,944 p=13534 u=root n=ansible | ok: [node02]
+2021-10-02 10:55:29,945 p=13534 u=root n=ansible | ok: [node01]
+2021-10-02 10:55:29,962 p=13534 u=root n=ansible | TASK [common : write selinux disabled to file] ***************************************************************************************
+2021-10-02 10:55:30,552 p=13534 u=root n=ansible | ok: [master01]
+2021-10-02 10:55:30,566 p=13534 u=root n=ansible | ok: [node02]
+2021-10-02 10:55:30,570 p=13534 u=root n=ansible | ok: [node01]
+2021-10-02 10:55:30,587 p=13534 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:55:30,700 p=13534 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/07.advanced-kernal-settings.yml for node01, node02, master01
+2021-10-02 10:55:30,763 p=13534 u=root n=ansible | TASK [common : Add the br_netfilter module] ******************************************************************************************
+2021-10-02 10:55:31,388 p=13534 u=root n=ansible | ok: [master01]
+2021-10-02 10:55:31,406 p=13534 u=root n=ansible | ok: [node01]
+2021-10-02 10:55:31,410 p=13534 u=root n=ansible | ok: [node02]
+2021-10-02 10:55:31,428 p=13534 u=root n=ansible | TASK [common : copy kernal settings file to local] ***********************************************************************************
+2021-10-02 10:55:31,886 p=13534 u=root n=ansible | ok: [node01]
+2021-10-02 10:55:31,916 p=13534 u=root n=ansible | ok: [node02]
+2021-10-02 10:55:31,928 p=13534 u=root n=ansible | ok: [master01]
+2021-10-02 10:55:31,945 p=13534 u=root n=ansible | TASK [common : sysctl settings] ******************************************************************************************************
+2021-10-02 10:55:32,398 p=13534 u=root n=ansible | changed: [node01]
+2021-10-02 10:55:32,430 p=13534 u=root n=ansible | changed: [master01]
+2021-10-02 10:55:32,441 p=13534 u=root n=ansible | changed: [node02]
+2021-10-02 10:55:32,458 p=13534 u=root n=ansible | TASK [common : load ipvs modules] ****************************************************************************************************
+2021-10-02 10:55:32,943 p=13534 u=root n=ansible | ok: [node01] => (item=ip_vs)
+2021-10-02 10:55:32,968 p=13534 u=root n=ansible | ok: [node02] => (item=ip_vs)
+2021-10-02 10:55:32,983 p=13534 u=root n=ansible | ok: [master01] => (item=ip_vs)
+2021-10-02 10:55:33,373 p=13534 u=root n=ansible | ok: [node01] => (item=ip_vs_rr)
+2021-10-02 10:55:33,386 p=13534 u=root n=ansible | ok: [master01] => (item=ip_vs_rr)
+2021-10-02 10:55:33,404 p=13534 u=root n=ansible | ok: [node02] => (item=ip_vs_rr)
+2021-10-02 10:55:33,790 p=13534 u=root n=ansible | ok: [master01] => (item=ip_vs_wrr)
+2021-10-02 10:55:33,803 p=13534 u=root n=ansible | ok: [node01] => (item=ip_vs_wrr)
+2021-10-02 10:55:33,833 p=13534 u=root n=ansible | ok: [node02] => (item=ip_vs_wrr)
+2021-10-02 10:55:34,198 p=13534 u=root n=ansible | ok: [master01] => (item=ip_vs_sh)
+2021-10-02 10:55:34,230 p=13534 u=root n=ansible | ok: [node01] => (item=ip_vs_sh)
+2021-10-02 10:55:34,257 p=13534 u=root n=ansible | ok: [node02] => (item=ip_vs_sh)
+2021-10-02 10:55:34,610 p=13534 u=root n=ansible | ok: [master01] => (item=nf_conntrack_ipv4)
+2021-10-02 10:55:34,663 p=13534 u=root n=ansible | ok: [node01] => (item=nf_conntrack_ipv4)
+2021-10-02 10:55:34,689 p=13534 u=root n=ansible | ok: [node02] => (item=nf_conntrack_ipv4)
+2021-10-02 10:55:34,711 p=13534 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:55:34,823 p=13534 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/08.journald.settings.yml for node01, node02, master01
+2021-10-02 10:55:34,894 p=13534 u=root n=ansible | TASK [common : create the folder] ****************************************************************************************************
+2021-10-02 10:55:35,358 p=13534 u=root n=ansible | ok: [node01]
+2021-10-02 10:55:35,388 p=13534 u=root n=ansible | ok: [master01]
+2021-10-02 10:55:35,392 p=13534 u=root n=ansible | ok: [node02]
+2021-10-02 10:55:35,410 p=13534 u=root n=ansible | TASK [common : copy journal files to] ************************************************************************************************
+2021-10-02 10:55:36,186 p=13534 u=root n=ansible | ok: [node01]
+2021-10-02 10:55:36,210 p=13534 u=root n=ansible | ok: [node02]
+2021-10-02 10:55:36,253 p=13534 u=root n=ansible | ok: [master01]
+2021-10-02 10:55:36,270 p=13534 u=root n=ansible | TASK [common : restart jornald] ******************************************************************************************************
+2021-10-02 10:55:36,915 p=13534 u=root n=ansible | changed: [node01]
+2021-10-02 10:55:36,942 p=13534 u=root n=ansible | changed: [master01]
+2021-10-02 10:55:36,946 p=13534 u=root n=ansible | changed: [node02]
+2021-10-02 10:55:36,963 p=13534 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 10:55:37,078 p=13534 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/09.install-docker.yml for node01, node02, master01
+2021-10-02 10:55:37,156 p=13534 u=root n=ansible | TASK [common : mkdir docker] *********************************************************************************************************
+2021-10-02 10:55:37,623 p=13534 u=root n=ansible | ok: [node01]
+2021-10-02 10:55:37,653 p=13534 u=root n=ansible | ok: [master01]
+2021-10-02 10:55:37,656 p=13534 u=root n=ansible | ok: [node02]
+2021-10-02 10:55:37,673 p=13534 u=root n=ansible | TASK [common : copy docker daemon.json] **********************************************************************************************
+2021-10-02 10:55:38,452 p=13534 u=root n=ansible | ok: [node01]
+2021-10-02 10:55:38,481 p=13534 u=root n=ansible | ok: [master01]
+2021-10-02 10:55:38,486 p=13534 u=root n=ansible | ok: [node02]
+2021-10-02 10:55:38,503 p=13534 u=root n=ansible | TASK [common : install docker-ce] ****************************************************************************************************
+2021-10-02 10:55:39,649 p=13534 u=root n=ansible | fatal: [node01]: FAILED! => {"changed": false, "msg": "No package matching 'docker-ce' found available, installed or updated", "rc": 126, "results": ["No package matching 'docker-ce' found available, installed or updated"]}
+2021-10-02 10:55:39,661 p=13534 u=root n=ansible | fatal: [master01]: FAILED! => {"changed": false, "msg": "No package matching 'docker-ce' found available, installed or updated", "rc": 126, "results": ["No package matching 'docker-ce' found available, installed or updated"]}
+2021-10-02 10:55:39,670 p=13534 u=root n=ansible | fatal: [node02]: FAILED! => {"changed": false, "msg": "No package matching 'docker-ce' found available, installed or updated", "rc": 126, "results": ["No package matching 'docker-ce' found available, installed or updated"]}
+2021-10-02 10:55:39,672 p=13534 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2021-10-02 10:55:39,672 p=13534 u=root n=ansible | master01                   : ok=33   changed=5    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-10-02 10:55:39,673 p=13534 u=root n=ansible | node01                     : ok=33   changed=5    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-10-02 10:55:39,673 p=13534 u=root n=ansible | node02                     : ok=33   changed=5    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-10-02 10:56:12,820 p=14423 u=root n=ansible |  [ERROR]: User interrupted execution
+
+2021-10-02 11:06:47,308 p=14545 u=root n=ansible | PLAY [all] ***************************************************************************************************************************
+2021-10-02 11:06:47,328 p=14545 u=root n=ansible | TASK [Gathering Facts] ***************************************************************************************************************
+2021-10-02 11:06:48,880 p=14545 u=root n=ansible | ok: [master01]
+2021-10-02 11:06:48,915 p=14545 u=root n=ansible | ok: [node02]
+2021-10-02 11:06:48,921 p=14545 u=root n=ansible | ok: [node01]
+2021-10-02 11:06:48,938 p=14545 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 11:06:49,044 p=14545 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/00.disable-firewalld.yml for node01, node02, master01
+2021-10-02 11:06:49,070 p=14545 u=root n=ansible | TASK [common : disable firewalld] ****************************************************************************************************
+2021-10-02 11:06:50,016 p=14545 u=root n=ansible | ok: [master01]
+2021-10-02 11:06:50,039 p=14545 u=root n=ansible | ok: [node01]
+2021-10-02 11:06:50,069 p=14545 u=root n=ansible | ok: [node02]
+2021-10-02 11:06:50,087 p=14545 u=root n=ansible | TASK [common : time zone settings] ***************************************************************************************************
+2021-10-02 11:06:50,738 p=14545 u=root n=ansible | ok: [master01]
+2021-10-02 11:06:50,753 p=14545 u=root n=ansible | ok: [node02]
+2021-10-02 11:06:50,754 p=14545 u=root n=ansible | ok: [node01]
+2021-10-02 11:06:50,771 p=14545 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 11:06:50,881 p=14545 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/01.install-packages.yml for node01, node02, master01
+2021-10-02 11:06:50,912 p=14545 u=root n=ansible | TASK [common : Install a list of packages] *******************************************************************************************
+2021-10-02 11:06:52,001 p=14545 u=root n=ansible | ok: [master01]
+2021-10-02 11:06:52,129 p=14545 u=root n=ansible | ok: [node02]
+2021-10-02 11:06:52,130 p=14545 u=root n=ansible | ok: [node01]
+2021-10-02 11:06:52,147 p=14545 u=root n=ansible | TASK [common : copy docker and k8s repo] *********************************************************************************************
+2021-10-02 11:06:53,218 p=14545 u=root n=ansible | changed: [master01]
+2021-10-02 11:06:53,229 p=14545 u=root n=ansible | changed: [node01]
+2021-10-02 11:06:53,234 p=14545 u=root n=ansible | changed: [node02]
+2021-10-02 11:06:53,251 p=14545 u=root n=ansible | TASK [common : copy docker repo] *****************************************************************************************************
+2021-10-02 11:06:54,065 p=14545 u=root n=ansible | changed: [node01]
+2021-10-02 11:06:54,083 p=14545 u=root n=ansible | changed: [master01]
+2021-10-02 11:06:54,088 p=14545 u=root n=ansible | changed: [node02]
+2021-10-02 11:06:54,106 p=14545 u=root n=ansible | TASK [common : yum update cache] *****************************************************************************************************
+2021-10-02 11:06:56,562 p=14545 u=root n=ansible | [WARNING]: Consider using the yum module rather than running 'yum'.  If you need to use command because yum is insufficient you can
+add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get rid of this message.
+
+2021-10-02 11:06:56,563 p=14545 u=root n=ansible | changed: [node02]
+2021-10-02 11:06:56,599 p=14545 u=root n=ansible | changed: [master01]
+2021-10-02 11:06:56,743 p=14545 u=root n=ansible | changed: [node01]
+2021-10-02 11:06:56,761 p=14545 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 11:06:56,869 p=14545 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/02.copy-hosts-file.yml for node01, node02, master01
+2021-10-02 11:06:56,910 p=14545 u=root n=ansible | TASK [common : copy hosts file to every nodes] ***************************************************************************************
+2021-10-02 11:06:57,839 p=14545 u=root n=ansible | ok: [master01]
+2021-10-02 11:06:57,857 p=14545 u=root n=ansible | ok: [node01]
+2021-10-02 11:06:57,858 p=14545 u=root n=ansible | ok: [node02]
+2021-10-02 11:06:57,876 p=14545 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 11:06:57,985 p=14545 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/03.copy-chrony-conf.yml for node01, node02, master01
+2021-10-02 11:06:58,029 p=14545 u=root n=ansible | TASK [common : copy chrony file to echo host] ****************************************************************************************
+2021-10-02 11:06:58,788 p=14545 u=root n=ansible | ok: [node01]
+2021-10-02 11:06:58,798 p=14545 u=root n=ansible | ok: [node02]
+2021-10-02 11:06:58,802 p=14545 u=root n=ansible | ok: [master01]
+2021-10-02 11:06:58,820 p=14545 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 11:06:58,930 p=14545 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/04.flush-iptables.yml for node01, node02, master01
+2021-10-02 11:06:58,977 p=14545 u=root n=ansible | TASK [common : flush iptables] *******************************************************************************************************
+2021-10-02 11:06:59,607 p=14545 u=root n=ansible | changed: [master01]
+2021-10-02 11:06:59,620 p=14545 u=root n=ansible | changed: [node01]
+2021-10-02 11:06:59,621 p=14545 u=root n=ansible | changed: [node02]
+2021-10-02 11:06:59,638 p=14545 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 11:06:59,750 p=14545 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/05.swapoff.yml for node01, node02, master01
+2021-10-02 11:06:59,802 p=14545 u=root n=ansible | TASK [common : swap off] *************************************************************************************************************
+2021-10-02 11:07:00,244 p=14545 u=root n=ansible | changed: [node01]
+2021-10-02 11:07:00,276 p=14545 u=root n=ansible | changed: [node02]
+2021-10-02 11:07:00,280 p=14545 u=root n=ansible | changed: [master01]
+2021-10-02 11:07:00,297 p=14545 u=root n=ansible | TASK [common : write to fstable swap off] ********************************************************************************************
+2021-10-02 11:07:00,860 p=14545 u=root n=ansible | ok: [master01]
+2021-10-02 11:07:00,872 p=14545 u=root n=ansible | ok: [node02]
+2021-10-02 11:07:00,873 p=14545 u=root n=ansible | ok: [node01]
+2021-10-02 11:07:00,891 p=14545 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 11:07:01,001 p=14545 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/06.selinux-disabled.yml for node01, node02, master01
+2021-10-02 11:07:01,057 p=14545 u=root n=ansible | TASK [common : disabling selinux] ****************************************************************************************************
+2021-10-02 11:07:01,950 p=14545 u=root n=ansible | ok: [master01]
+2021-10-02 11:07:01,970 p=14545 u=root n=ansible | ok: [node01]
+2021-10-02 11:07:01,977 p=14545 u=root n=ansible | ok: [node02]
+2021-10-02 11:07:01,994 p=14545 u=root n=ansible | TASK [common : write selinux disabled to file] ***************************************************************************************
+2021-10-02 11:07:02,566 p=14545 u=root n=ansible | ok: [master01]
+2021-10-02 11:07:02,575 p=14545 u=root n=ansible | ok: [node01]
+2021-10-02 11:07:02,579 p=14545 u=root n=ansible | ok: [node02]
+2021-10-02 11:07:02,596 p=14545 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 11:07:02,710 p=14545 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/07.advanced-kernal-settings.yml for node01, node02, master01
+2021-10-02 11:07:02,771 p=14545 u=root n=ansible | TASK [common : Add the br_netfilter module] ******************************************************************************************
+2021-10-02 11:07:03,370 p=14545 u=root n=ansible | changed: [master01]
+2021-10-02 11:07:03,387 p=14545 u=root n=ansible | changed: [node01]
+2021-10-02 11:07:03,387 p=14545 u=root n=ansible | changed: [node02]
+2021-10-02 11:07:03,405 p=14545 u=root n=ansible | TASK [common : copy kernal settings file to local] ***********************************************************************************
+2021-10-02 11:07:03,860 p=14545 u=root n=ansible | ok: [node01]
+2021-10-02 11:07:03,884 p=14545 u=root n=ansible | ok: [node02]
+2021-10-02 11:07:03,893 p=14545 u=root n=ansible | ok: [master01]
+2021-10-02 11:07:03,910 p=14545 u=root n=ansible | TASK [common : sysctl settings] ******************************************************************************************************
+2021-10-02 11:07:04,355 p=14545 u=root n=ansible | changed: [node01]
+2021-10-02 11:07:04,378 p=14545 u=root n=ansible | changed: [node02]
+2021-10-02 11:07:04,391 p=14545 u=root n=ansible | changed: [master01]
+2021-10-02 11:07:04,409 p=14545 u=root n=ansible | TASK [common : load ipvs modules] ****************************************************************************************************
+2021-10-02 11:07:04,930 p=14545 u=root n=ansible | changed: [node01] => (item=ip_vs)
+2021-10-02 11:07:04,964 p=14545 u=root n=ansible | changed: [node02] => (item=ip_vs)
+2021-10-02 11:07:04,969 p=14545 u=root n=ansible | changed: [master01] => (item=ip_vs)
+2021-10-02 11:07:05,368 p=14545 u=root n=ansible | changed: [node01] => (item=ip_vs_rr)
+2021-10-02 11:07:05,387 p=14545 u=root n=ansible | changed: [master01] => (item=ip_vs_rr)
+2021-10-02 11:07:05,397 p=14545 u=root n=ansible | changed: [node02] => (item=ip_vs_rr)
+2021-10-02 11:07:05,798 p=14545 u=root n=ansible | changed: [node01] => (item=ip_vs_wrr)
+2021-10-02 11:07:05,803 p=14545 u=root n=ansible | changed: [master01] => (item=ip_vs_wrr)
+2021-10-02 11:07:05,832 p=14545 u=root n=ansible | changed: [node02] => (item=ip_vs_wrr)
+2021-10-02 11:07:06,222 p=14545 u=root n=ansible | changed: [master01] => (item=ip_vs_sh)
+2021-10-02 11:07:06,240 p=14545 u=root n=ansible | changed: [node01] => (item=ip_vs_sh)
+2021-10-02 11:07:06,271 p=14545 u=root n=ansible | changed: [node02] => (item=ip_vs_sh)
+2021-10-02 11:07:06,639 p=14545 u=root n=ansible | changed: [master01] => (item=nf_conntrack_ipv4)
+2021-10-02 11:07:06,671 p=14545 u=root n=ansible | changed: [node01] => (item=nf_conntrack_ipv4)
+2021-10-02 11:07:06,708 p=14545 u=root n=ansible | changed: [node02] => (item=nf_conntrack_ipv4)
+2021-10-02 11:07:06,726 p=14545 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 11:07:06,839 p=14545 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/08.journald.settings.yml for node01, node02, master01
+2021-10-02 11:07:06,910 p=14545 u=root n=ansible | TASK [common : create the folder] ****************************************************************************************************
+2021-10-02 11:07:07,362 p=14545 u=root n=ansible | ok: [node01]
+2021-10-02 11:07:07,388 p=14545 u=root n=ansible | ok: [node02]
+2021-10-02 11:07:07,397 p=14545 u=root n=ansible | ok: [master01]
+2021-10-02 11:07:07,415 p=14545 u=root n=ansible | TASK [common : copy journal files to] ************************************************************************************************
+2021-10-02 11:07:08,169 p=14545 u=root n=ansible | ok: [node01]
+2021-10-02 11:07:08,190 p=14545 u=root n=ansible | ok: [node02]
+2021-10-02 11:07:08,193 p=14545 u=root n=ansible | ok: [master01]
+2021-10-02 11:07:08,211 p=14545 u=root n=ansible | TASK [common : restart jornald] ******************************************************************************************************
+2021-10-02 11:07:08,833 p=14545 u=root n=ansible | changed: [node01]
+2021-10-02 11:07:08,858 p=14545 u=root n=ansible | changed: [node02]
+2021-10-02 11:07:08,862 p=14545 u=root n=ansible | changed: [master01]
+2021-10-02 11:07:08,878 p=14545 u=root n=ansible | TASK [common : include_tasks] ********************************************************************************************************
+2021-10-02 11:07:08,993 p=14545 u=root n=ansible | included: /root/ansible-k8s-centos7/roles/common/tasks/09.install-docker.yml for node01, node02, master01
+2021-10-02 11:07:09,078 p=14545 u=root n=ansible | TASK [common : mkdir docker] *********************************************************************************************************
+2021-10-02 11:07:09,525 p=14545 u=root n=ansible | ok: [node01]
+2021-10-02 11:07:09,555 p=14545 u=root n=ansible | ok: [node02]
+2021-10-02 11:07:09,565 p=14545 u=root n=ansible | ok: [master01]
+2021-10-02 11:07:09,584 p=14545 u=root n=ansible | TASK [common : copy docker daemon.json] **********************************************************************************************
+2021-10-02 11:07:10,347 p=14545 u=root n=ansible | ok: [node01]
+2021-10-02 11:07:10,365 p=14545 u=root n=ansible | ok: [master01]
+2021-10-02 11:07:10,366 p=14545 u=root n=ansible | ok: [node02]
+2021-10-02 11:07:10,383 p=14545 u=root n=ansible | TASK [common : install docker-ce] ****************************************************************************************************
+2021-10-02 11:10:03,148 p=14545 u=root n=ansible | changed: [master01]
+2021-10-02 11:10:04,504 p=14545 u=root n=ansible | changed: [node02]
+2021-10-02 11:10:04,739 p=14545 u=root n=ansible | changed: [node01]
+2021-10-02 11:10:04,757 p=14545 u=root n=ansible | TASK [common : enable docker] ********************************************************************************************************
+2021-10-02 11:10:06,433 p=14545 u=root n=ansible | changed: [node01]
+2021-10-02 11:10:06,942 p=14545 u=root n=ansible | changed: [node02]
+2021-10-02 11:10:06,950 p=14545 u=root n=ansible | changed: [master01]
+2021-10-02 11:10:06,968 p=14545 u=root n=ansible | TASK [common : enabled kubelet] ******************************************************************************************************
+2021-10-02 11:10:07,703 p=14545 u=root n=ansible | changed: [node01]
+2021-10-02 11:10:07,714 p=14545 u=root n=ansible | changed: [master01]
+2021-10-02 11:10:07,732 p=14545 u=root n=ansible | changed: [node02]
+2021-10-02 11:10:07,737 p=14545 u=root n=ansible | PLAY RECAP ***************************************************************************************************************************
+2021-10-02 11:10:07,738 p=14545 u=root n=ansible | master01                   : ok=36   changed=12   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-02 11:10:07,738 p=14545 u=root n=ansible | node01                     : ok=36   changed=12   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-02 11:10:07,738 p=14545 u=root n=ansible | node02                     : ok=36   changed=12   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-10-02 11:27:08,344 p=15578 u=root n=ansible | node02 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).", 
+    "unreachable": true
+}
+2021-10-02 11:27:08,352 p=15578 u=root n=ansible | master01 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).", 
+    "unreachable": true
+}
+2021-10-02 11:27:09,162 p=15578 u=root n=ansible | node01 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}

@@ -20,13 +20,13 @@
 - name: copy docker and k8s repo
   copy:
     src: k8s.repo
-    dest: /etc/yum.repo.d/
+    dest: /etc/yum.repos.d/
     force: true
 
 - name: copy docker repo
   copy:
     src: docker-ce.repo
-    dest: /etc/yum.repo.d/
+    dest: /etc/yum.repos.d/
     force: true
 
 - name: yum update cache

@@ -10,9 +10,12 @@
 
 - name: install docker-ce
   yum:
-    name: "{{ item  }}"
+    name:
+      - docker-ce
+      - kubelet
+      - kubeadm
+      - kubectl
     state: present 
-  loop: "{{ k8s_packages  }}"
 
 - name: enable docker
   systemd:
