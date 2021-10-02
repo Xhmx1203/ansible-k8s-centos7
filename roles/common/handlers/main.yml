@@ -1,0 +1,12 @@
+---
+# handlers file for common
+- name: restart chronyd
+  systemd:
+    name: chronyd
+    state: restarted
+
+- name: enable iptables
+  systemd:
+    name: iptables
+    state: started
+    enabled: yes

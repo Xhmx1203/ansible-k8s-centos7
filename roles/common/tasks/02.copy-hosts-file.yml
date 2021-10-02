@@ -1,0 +1,5 @@
+- name: copy hosts file to every nodes
+  copy:
+    src: hosts
+    dest: /etc/hosts
+    force: yes

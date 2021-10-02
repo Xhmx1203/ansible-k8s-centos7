@@ -1,0 +1,9 @@
+- name: disable firewalld
+  systemd:
+    name: firewalld
+    state: stopped
+    enabled: no
+
+- name: time zone settings
+  timezone: 
+    name: Asia/Shanghai

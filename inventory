@@ -1,0 +1,5 @@
+[masters]
+master01
+[workers]
+node01
+node02

@@ -1,0 +1,27 @@
+- name: mkdir docker
+  file:
+    path: /etc/docker
+    state: directory
+
+- name: copy docker daemon.json
+  copy:
+    src: daemon.json
+    dest: /etc/docker/daemon.json
+
+- name: install docker-ce
+  yum:
+    name: "{{ item  }}"
+    state: present 
+  loop: "{{ k8s_packages  }}"
+
+- name: enable docker
+  systemd:
+    name: docker
+    state: started
+    enabled: true
+
+- name: enabled kubelet
+  systemd:
+    name: kubelet
+    state: started
+    enabled: true

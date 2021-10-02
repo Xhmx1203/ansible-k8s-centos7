@@ -1,0 +1,33 @@
+---
+- name: Install a list of packages
+  yum:
+    name:
+      - bash-completion
+      - iptables-services
+      - conntrack-tools
+      - net-tools
+      - git
+      - curl
+      - sysstat
+      - ipvsadm
+      - ipset
+      - yum-utils
+      - lvm2
+      - device-mapper-persistent-data
+    state: present
+  notify: enable iptables
+
+- name: copy docker and k8s repo
+  copy:
+    src: k8s.repo
+    dest: /etc/yum.repo.d/
+    force: true
+
+- name: copy docker repo
+  copy:
+    src: docker-ce.repo
+    dest: /etc/yum.repo.d/
+    force: true
+
+- name: yum update cache
+  shell: 'yum makecache fast'

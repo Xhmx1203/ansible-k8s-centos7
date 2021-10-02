@@ -1,0 +1,14 @@
+- name: create the folder
+  file:
+    path: /etc/systemd/journald.conf.d
+    state: directory
+
+- name: copy journal files to 
+  copy:
+    src: prophet.conf
+    dest: /etc/systemd/journald.conf.d/
+
+- name: restart jornald
+  systemd:
+    name: systemd-journald
+    state: restarted

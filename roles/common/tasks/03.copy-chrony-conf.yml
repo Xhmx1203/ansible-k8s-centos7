@@ -1,0 +1,6 @@
+- name: copy chrony file to echo host
+  copy:
+    src: chrony.conf
+    dest: /etc/chrony.conf
+    force: yes
+  notify: restart chronyd

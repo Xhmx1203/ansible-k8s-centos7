@@ -1,0 +1,12 @@
+---
+# tasks file for common
+- include_tasks: 00.disable-firewalld.yml
+- include_tasks: 01.install-packages.yml
+- include_tasks: 02.copy-hosts-file.yml 
+- include_tasks: 03.copy-chrony-conf.yml
+- include_tasks: 04.flush-iptables.yml
+- include_tasks: 05.swapoff.yml
+- include_tasks: 06.selinux-disabled.yml
+- include_tasks: 07.advanced-kernal-settings.yml
+- include_tasks: 08.journald.settings.yml
+- include_tasks: 09.install-docker.yml

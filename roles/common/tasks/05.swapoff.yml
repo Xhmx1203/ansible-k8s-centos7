@@ -1,0 +1,9 @@
+- name: swap off
+  shell: "swapoff -a"
+
+- name: write to fstable swap off
+  replace:
+    dest: /etc/fstab
+    regexp: '^/dev/mapper/centos-swap'
+    replace: '#/dev/mapper/centos-swap'
+
